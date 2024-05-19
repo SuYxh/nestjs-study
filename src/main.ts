@@ -7,6 +7,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import * as cors from 'cors';
 import { join } from 'path';
 import { CustomResponse } from './common/response';
+import { HttpFilter } from './common/filter';
 // const whiteList = ['/list', '/users'];
 
 // function middleWareAll(req: Request, res: Response, next: NextFunction) {
@@ -23,6 +24,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.use(cors());
   app.useGlobalInterceptors(new CustomResponse());
+  app.useGlobalFilters(new HttpFilter());
+
   app.useStaticAssets(join(__dirname, 'images'), {
     prefix: '/public',
   });
