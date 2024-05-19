@@ -7,6 +7,7 @@ import { ListModule } from './list/list.module';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from './config/config.module';
 import { UploadModule } from './upload/upload.module';
+import { LoginModule } from './login/login.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { UploadModule } from './upload/upload.module';
     UsersModule,
     ConfigModule.forRoot({ path: '/list' }),
     UploadModule,
+    LoginModule,
   ],
   controllers: [AppController],
   providers: [

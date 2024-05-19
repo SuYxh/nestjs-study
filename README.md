@@ -83,3 +83,9 @@ https://blog.csdn.net/qq1195566313/article/details/126943648
 第十八章 nestjs 管道转换
 
 https://blog.csdn.net/qq1195566313/article/details/127024014
+
+
+
+第十九章 nestjs 管道验证DTO
+
+https://blog.csdn.net/qq1195566313/article/details/127024787
