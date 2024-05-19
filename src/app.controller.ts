@@ -16,7 +16,7 @@ export class AppController {
   getHello(): string {
     // return this.ccc;
     // return this.bbb;
-    // return this.appService.getHello();
-    return this.usersService.findAll();
+    return this.appService.getHello();
+    // return this.usersService.findAll();
   }
 }
