@@ -8,6 +8,7 @@ import * as cors from 'cors';
 import { join } from 'path';
 import { CustomResponse } from './common/response';
 import { HttpFilter } from './common/filter';
+// import { RoleGuard } from './guard/role.guard';
 // const whiteList = ['/list', '/users'];
 
 // function middleWareAll(req: Request, res: Response, next: NextFunction) {
@@ -44,6 +45,7 @@ async function bootstrap() {
 
   // app.use(middleWareAll);
   app.useGlobalPipes(new ValidationPipe());
+  // app.useGlobalGuards(new RoleGuard());
 
   await app.listen(3000);
 }

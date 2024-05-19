@@ -89,3 +89,16 @@ https://blog.csdn.net/qq1195566313/article/details/127024014
 第十九章 nestjs 管道验证DTO
 
 https://blog.csdn.net/qq1195566313/article/details/127024787
+
+
+
+第二十章 nestjs 爬虫
+
+https://blog.csdn.net/qq1195566313/article/details/127158497
+
+
+
+第二十一章 nestjs 守卫
+
+https://blog.csdn.net/qq1195566313/article/details/127175529
+
