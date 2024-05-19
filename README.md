@@ -62,8 +62,6 @@ https://blog.csdn.net/qq1195566313/article/details/126880230
 
 
 
-
-
 第十五章 nestjs 和 RxJs
 
 https://blog.csdn.net/qq1195566313/article/details/126912646
@@ -79,3 +77,9 @@ https://blog.csdn.net/qq1195566313/article/details/126916268
 第十七章 nestjs 异常拦截器
 
 https://blog.csdn.net/qq1195566313/article/details/126943648
+
+
+
+第十八章 nestjs 管道转换
+
+https://blog.csdn.net/qq1195566313/article/details/127024014
