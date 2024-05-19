@@ -8,6 +8,7 @@ specifiers:
   '@nestjs/platform-express': ^10.0.0
   '@nestjs/schematics': ^10.0.0
   '@nestjs/testing': ^10.0.0
+  '@types/cors': ^2.8.17
   '@types/express': ^4.17.17
   '@types/express-session': ^1.18.0
   '@types/jest': ^29.5.2
@@ -15,6 +16,7 @@ specifiers:
   '@types/supertest': ^2.0.12
   '@typescript-eslint/eslint-plugin': ^6.0.0
   '@typescript-eslint/parser': ^6.0.0
+  cors: ^2.8.5
   eslint: ^8.42.0
   eslint-config-prettier: ^9.0.0
   eslint-plugin-prettier: ^5.0.0
@@ -37,6 +39,7 @@ dependencies:
   '@nestjs/core': 10.3.8_44vjyzkgt6yd3dluln7dceqnwi
   '@nestjs/mapped-types': 2.0.5_x4wyzw6ycsmdeoeooogeffpcdu
   '@nestjs/platform-express': 10.3.8_7qxsncdukxfxm6f7ehu5tvov44
+  cors: 2.8.5
   express-session: 1.18.0
   reflect-metadata: 0.1.14
   rxjs: 7.8.1
@@ -46,6 +49,7 @@ devDependencies:
   '@nestjs/cli': 10.3.2
   '@nestjs/schematics': 10.1.1_typescript@5.4.5
   '@nestjs/testing': 10.3.8_npyyhkf36xojpgp5hfhsblkm4a
+  '@types/cors': 2.8.17
   '@types/express': 4.17.21
   '@types/express-session': 1.18.0
   '@types/jest': 29.5.12
@@ -1143,6 +1147,12 @@ packages:
 
   /@types/cookiejar/2.1.5:
     resolution: {integrity: sha512-he+DHOWReW0nghN24E1WUqM0efK4kI9oTqDm6XmK8ZPe2djZ90BSNdGnIyCLzCPw7/pogPlGbzI2wHGGmi4O/Q==}
+    dev: true
+
+  /@types/cors/2.8.17:
+    resolution: {integrity: sha512-8CGDvrBj1zgo2qE+oS3pOCyYNqCPryMWY2bGfwA0dcfopWGgxs+78df0Rs3rc9THP4JkOhLsAa+15VdpAqkcUA==}
+    dependencies:
+      '@types/node': 20.12.12
     dev: true
 
   /@types/eslint-scope/3.7.7:
