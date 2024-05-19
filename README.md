@@ -28,3 +28,8 @@ https://blog.csdn.net/qq1195566313/article/details/126327047
 
 
 
+小满nestjs（第十章 nestjs 提供者）
+
+https://blog.csdn.net/qq1195566313/article/details/126494064
+
+![image-20240519190244518](https://qn.huat.xyz/mac/202405191902615.png)
