@@ -2,24 +2,29 @@ import { NestFactory } from '@nestjs/core';
 import { VersioningType } from '@nestjs/common';
 import { AppModule } from './app.module';
 import * as session from 'express-session';
-import { Response, Request, NextFunction } from 'express';
+import { NestExpressApplication } from '@nestjs/platform-express';
+// import { Response, Request, NextFunction } from 'express';
 import * as cors from 'cors';
+import { join } from 'path';
 
-const whiteList = ['/list', '/users'];
+// const whiteList = ['/list', '/users'];
 
-function middleWareAll(req: Request, res: Response, next: NextFunction) {
-  console.log(req.originalUrl, '我收全局的');
+// function middleWareAll(req: Request, res: Response, next: NextFunction) {
+//   console.log(req.originalUrl, '我收全局的');
 
-  if (whiteList.includes(req.originalUrl)) {
-    next();
-  } else {
-    res.send('小黑子露出鸡脚了吧');
-  }
-}
+//   if (whiteList.includes(req.originalUrl)) {
+//     next();
+//   } else {
+//     res.send('小黑子露出鸡脚了吧');
+//   }
+// }
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.use(cors());
+  app.useStaticAssets(join(__dirname, 'images'), {
+    prefix: '/public',
+  });
   app.enableVersioning({
     type: VersioningType.URI,
   });
@@ -33,7 +38,7 @@ async function bootstrap() {
     }),
   );
 
-  app.use(middleWareAll);
+  // app.use(middleWareAll);
 
   await app.listen(3000);
 }
