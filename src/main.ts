@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { VersioningType } from '@nestjs/common';
+import { VersioningType, ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 import * as session from 'express-session';
 import { NestExpressApplication } from '@nestjs/platform-express';
@@ -43,6 +43,7 @@ async function bootstrap() {
   );
 
   // app.use(middleWareAll);
+  app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(3000);
 }
