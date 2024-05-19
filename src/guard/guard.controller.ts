@@ -14,9 +14,17 @@ import { CreateGuardDto } from './dto/create-guard.dto';
 import { UpdateGuardDto } from './dto/update-guard.dto';
 import { RoleGuard } from './role.guard';
 import { Role } from './role.decorator';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiParam,
+  ApiBearerAuth,
+} from '@nestjs/swagger';
 
 @Controller('guard')
 @UseGuards(RoleGuard)
+@ApiTags('守卫')
+@ApiBearerAuth()
 export class GuardController {
   constructor(private readonly guardService: GuardService) {}
 
@@ -27,6 +35,10 @@ export class GuardController {
 
   @Get()
   @SetMetadata('role', ['admin'])
+  @ApiOperation({
+    summary: '测试admin',
+    description: '请求该接口需要 admin 权限',
+  })
   findAll() {
     return this.guardService.findAll();
   }
@@ -38,6 +50,7 @@ export class GuardController {
   }
 
   @Get(':id')
+  @ApiParam({ name: 'id', description: '用户id', required: true })
   findOne(@Param('id') id: string) {
     return this.guardService.findOne(+id);
   }

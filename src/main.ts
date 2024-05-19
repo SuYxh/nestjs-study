@@ -9,6 +9,8 @@ import { join } from 'path';
 import { CustomResponse } from './common/response';
 import { HttpFilter } from './common/filter';
 // import { RoleGuard } from './guard/role.guard';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+
 // const whiteList = ['/list', '/users'];
 
 // function middleWareAll(req: Request, res: Response, next: NextFunction) {
@@ -46,6 +48,15 @@ async function bootstrap() {
   // app.use(middleWareAll);
   app.useGlobalPipes(new ValidationPipe());
   // app.useGlobalGuards(new RoleGuard());
+
+  const options = new DocumentBuilder()
+    .addBearerAuth()
+    .setTitle('接口文档')
+    .setDescription('描述，。。。')
+    .setVersion('1')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('/api-docs', app, document);
 
   await app.listen(3000);
 }
