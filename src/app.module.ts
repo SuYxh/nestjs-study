@@ -3,9 +3,17 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AppService2 } from './app.service2';
 import { UserModule } from './user/user.module';
+import { ListModule } from './list/list.module';
+import { UsersModule } from './users/users.module';
+import { ConfigModule } from './config/config.module';
 
 @Module({
-  imports: [UserModule],
+  imports: [
+    UserModule,
+    ListModule,
+    UsersModule,
+    ConfigModule.forRoot({ path: '/list' }),
+  ],
   controllers: [AppController],
   providers: [
     AppService2,
