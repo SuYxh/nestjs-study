@@ -6,6 +6,9 @@ import {
   Patch,
   Param,
   Delete,
+  // Request,
+  Query,
+  Headers,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -20,16 +23,32 @@ export class UserController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
+    console.log('createUserDto', createUserDto);
     return this.userService.create(createUserDto);
   }
 
+  // @Post()
+  // create(@Request() req) {
+  //   console.log('req', req.body);
+  //   return this.userService.create(req.body);
+  // }
+
+  // @Get()
+  // findAll(@Request() req) {
+  //   console.log('findAll', req.query);
+  //   return this.userService.findAll();
+  // }
+
   @Get()
-  findAll() {
+  findAll(@Query() query) {
+    console.log('findAll-query', query);
     return this.userService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: string, @Headers() headers) {
+    console.log('id', id);
+    console.log('headers', headers);
     return this.userService.findOne(+id);
   }
 
